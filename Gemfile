@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
+gem 'devise'
 gem 'rails', '4.2.6'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -14,6 +15,8 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry'
+  gem 'pry-rails'
 end
 gem 'bootstrap-sass'
 gem 'high_voltage'

@@ -1,9 +1,34 @@
 <!-- Page Content -->
+<% if current_user %>
+  Hi, <%= current_user.name %>
+  <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+  <%= link_to('修改密碼', edit_registration_path(:user)) %>
+<% else %>
+  <%= link_to('註冊', new_registration_path(:user)) %> |
+  <%= link_to('登入', new_session_path(:user)) %>
+<% end %>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <h1>The Big Picture</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+          <% if current_user %>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @tasks.each do |task| %>
+                  <tr>
+                    <td><%= task.name %></td>
+                    <td><%= link_to 'Show', task %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
         </div>
     </div>
     <!-- /.row -->
