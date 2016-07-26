@@ -28,6 +28,8 @@
   <strong>User:</strong>
   <%= @task.user.name %>
 </p>
+<%= image_tag(@task.landmark) %>
+<%= image_tag(@task.pwd_image) %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', :root %>

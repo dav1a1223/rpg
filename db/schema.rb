@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717040002) do
+ActiveRecord::Schema.define(version: 20160725130533) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20160717040002) do
     t.string   "location"
     t.string   "password"
     t.text     "finish_way"
+    t.string   "landmark"
+    t.string   "pwd_image"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
