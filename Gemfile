@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 gem 'pg'
 gem 'heroku'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'mini_magick'
 gem 'carrierwave'
