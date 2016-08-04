@@ -1,35 +1,33 @@
 <p id="notice"><%= notice %></p>
-
+<br>
 <p>
-  <strong>任務名稱:</strong>
+  <strong><i class="fa fa-bookmark" aria-hidden="true"></i> 任務名稱:</strong>
   <%= @task.name %>
 </p>
 
 <p>
-  <strong>任務人數:</strong>
+  <strong><i class="fa fa-child" aria-hidden="true"></i> 任務人數:</strong>
   <%= @task.people_num %>
 </p>
 
 <p>
-  <strong>地點:</strong>
+  <strong><i class="fa fa-map-marker" aria-hidden="true"></i> 地點:</strong>
   <%= @task.location %>
 </p>
 
 <p>
-  <strong>任務內容:</strong>
+  <strong><i class="fa fa-bullhorn" aria-hidden="true"></i> 任務內容:</strong>
   <%= @task.description %>
 </p>
 <p>
-  <strong>完成方式:</strong>
+  <strong><i class="fa fa-map" aria-hidden="true"></i> 完成方式:</strong>
   <%= @task.finish_way %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong><i class="fa fa-flag" aria-hidden="true"></i> User:</strong>
   <%= @task.user.name %>
 </p>
-<%= image_tag(@task.landmark) %>
-<%= image_tag(@task.pwd_image) %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', :root %>

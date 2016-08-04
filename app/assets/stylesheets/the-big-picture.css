@@ -5,15 +5,11 @@
  */
 
 body {
-	margin-top: 50px;
-	margin-bottom: 50px;
-	background: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #ff9966;
 }
 
-.full {
-  background: url(http://placehold.it/1920x1080) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+header {
+  height: 10px;
 }

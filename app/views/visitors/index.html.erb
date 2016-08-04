@@ -1,4 +1,5 @@
-<!-- Page Content -->
+<br>
+<center>
 <% if current_user %>
   Hi, <%= current_user.name %>
   <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
@@ -7,30 +8,28 @@
   <%= link_to('註冊', new_registration_path(:user)) %> |
   <%= link_to('登入', new_session_path(:user)) %>
 <% end %>
-<div class="container">
+</center>
+<div class="container-fuild">
     <div class="row">
         <div class="col-md-6 col-sm-12">
           <% if current_user %>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @tasks.each do |task| %>
-                  <tr>
-                    <td><%= task.name %></td>
-                    <td><%= link_to 'Show', task %></td>
-                  </tr>
+           <center>
+              <% @tasks.each do |task| %>
+                <div style="background-color: #ffcc99;width:100%;">
+                  <h3 style="line-height:40px;">
+                    <i class="fa fa-bookmark" aria-hidden="true">
+                    </i>
+                    <%= task.name %>
+                  </h3>
+                  <h4><%= link_to 'Show Detail', task %>
+                  </h4>
+                </div>
                 <% end %>
-              </tbody>
-            </table>
+            </center>
           <% end %>
         </div>
     </div>
     <!-- /.row -->
 </div>
+
 <!-- /.container -->
