@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725130533) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160805061942) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -26,11 +23,14 @@ ActiveRecord::Schema.define(version: 20160725130533) do
     t.string   "location"
     t.string   "password"
     t.text     "finish_way"
-    t.string   "landmark"
     t.string   "pwd_image"
+    t.string   "landmark"
+    t.string   "check_pwd"
+    t.boolean  "pass"
+    t.string   "hint"
   end
 
-  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -49,8 +49,7 @@ ActiveRecord::Schema.define(version: 20160725130533) do
     t.string   "number"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  add_foreign_key "tasks", "users"
 end
